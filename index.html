@@ -26,16 +26,19 @@
   line-height: 0.8em;
 }
 
+.inverse .remark-code {
+  text-shadow: none;
+}
+
       .titleimg img { max-height: 300px; }
       .limitwidth img { max-width: 100%; }
     </style>
   </head>
   <body>
     <textarea id="source">
+
 layout: true
-
 class: inverse
-
 
 ---
 
@@ -52,7 +55,7 @@ class: middle, center, inverse
 
 class: inverse, center
 
-# I am @kevinwatters
+# I am @kevinwatters🏳‍🌈🏃🤓
 
 ### startup engineer
 
@@ -60,7 +63,7 @@ class: inverse, center
 
 class: inverse, center
 
-# I am @kevinwatters
+# I am @kevinwatters🏳‍🌈🏃🤓
 
 ### startup engineer turned VR and gamedev freelancer
 
@@ -78,55 +81,55 @@ class: inverse, center
 .pull-right[<img src="images/lwr.jpg" style="height: 189px">]
 ---
 
-.pull-right[<img src="images/citizen.png" style="max-width: 300px;">]
+name: games-art
 
-# games === art
+<img src="images/citizen.png" style="max-width: 45%; float:right; padding-left: 50px;">
 
-# &nbsp;
-
-# &nbsp;
+# why typescript?
 
 ---
 
-# ~~games === art~~
+template: games-art
 
-# games == art
-
-# &nbsp;
-
+## games === art
 
 ---
 
-# ~~games === art~~
+template: games-art
 
-# games == art
+## ~~games === art~~
 
-# games == systems
-
----
-
-games need math
+## games == art
 
 --
 
-math is painful without strong typing
+### but also...
 
+---
+
+name: games-art-math
+
+<img src="images/citizen-math.jpg" style="max-width: 45%; float:right; padding-left: 50px;">
+
+# why typescript?
+
+## ~~games === art~~
+
+## games == art
+
+### but also...
+
+## games are systems
 
 --
 
+## games use math
 
+--
 
----
-
-# Agenda
-
-1. Introduction
-2. Deep-dive
-3. ...
-
----
-
-# Introduction
+### math is painful without strong typing
+--
+ (imo)
 
 ---
 
@@ -140,12 +143,11 @@ export class Trigger extends AutoComponent<TriggerOpts>
 ```
 
 
-
     </textarea>
     <script src="remark-latest.min.js">
     </script>
     <script>
-      var slideshow = remark.create();
+      var slideshow = remark.create({slideNumberFormat: ""});
     </script>
   </body>
 </html>
