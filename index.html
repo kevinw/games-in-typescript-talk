@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Typescript for Games</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .twitter-icon { width: 30px; height: 30px; }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+.inverse {
+  background: #272822;
+  color: #777872;
+  text-shadow: 0 0 20px #333;
+}
+.inverse h1, .inverse h2 {
+  color: #f3f3f3;
+  line-height: 0.8em;
+}
+
+      .titleimg img { max-height: 300px; }
+      .limitwidth img { max-width: 100%; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+layout: true
+
+class: inverse
+
+
+---
+
+class: middle, center, inverse
+
+@kevinwatters
+## Jamming a Game in
+
+.limitwidth[![](images/title-tiles.png)]
+
+.titleimg[![](images/water-anim.gif)]
+
+---
+
+class: inverse, center
+
+# I am @kevinwatters
+
+### startup engineer
+
+---
+
+class: inverse, center
+
+# I am @kevinwatters
+
+### startup engineer turned VR and gamedev freelancer
+
+--
+
+.pull-left[<video autoplay loop width="45%" src="images/blackout.mp4" type="video/mp4">]
+--
+
+.pull-right[<video autoplay loop width="45%" src="images/zerodays2.mp4" type="video/mp4"> ]
+--
+
+.pull-left[<img src="images/impossible-sculptor.gif" style="height: 189px">]
+--
+
+.pull-right[<img src="images/lwr.jpg" style="height: 189px">]
+---
+
+.pull-right[<img src="images/citizen.png" style="max-width: 300px;">]
+
+# games === art
+
+# &nbsp;
+
+# &nbsp;
+
+---
+
+# ~~games === art~~
+
+# games == art
+
+# &nbsp;
+
+
+---
+
+# ~~games === art~~
+
+# games == art
+
+# games == systems
+
+---
+
+games need math
+
+--
+
+math is painful without strong typing
+
+
+--
+
+
+
+---
+
+# Agenda
+
+1. Introduction
+2. Deep-dive
+3. ...
+
+---
+
+# Introduction
+
+---
+
+```typescript
+@AutoComponent.register
+export class Trigger extends AutoComponent<TriggerOpts>
+{
+	triggerEvery:number;
+	hitbox: Hitbox;
+	lastTrigger:number = -1;
+```
+
+
+
+    </textarea>
+    <script src="remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
