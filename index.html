@@ -87,10 +87,10 @@ class: center
 
 --
 
-.pull-left[<video autoplay loop width="45%" src="images/blackout.mp4" type="video/mp4">]
+.pull-left[<video autoplay loop height="189" src="images/blackout.mp4" type="video/mp4">]
 --
 
-.pull-right[<video autoplay loop width="45%" src="images/zerodays2.mp4" type="video/mp4"> ]
+.pull-right[<video autoplay loop height="189" src="images/zerodays2.mp4" type="video/mp4"> ]
 --
 
 .pull-left[<img src="images/impossible-sculptor.gif" style="height: 189px">]
@@ -99,15 +99,25 @@ class: center
 .pull-right[<img src="images/lwr.jpg" style="height: 189px">]
 ---
 
-I wanted to make a game that was small and light and portable
+## I wanted to jam on (make quickly) a game
+
+### (I was at the beach)
 
 --
 
-![](images/unity-master-white.svg)
+### that was small and light and portable
 
 --
 
-* but Unity is big and its WebGL compiles are very slow
+### and maybe learn a new language
+
+--
+
+--
+
+<img src="images/unity-master-white.svg" style="max-height:200px;">
+
+### but Unity is big and its WebGL compiles are very slow
 
 ---
 
@@ -162,7 +172,15 @@ name: games-art-math
 --
  (imo)
 
-### NaN hell
+### types: 
+--
+prevents NaN hell
+--
+, lets you make changes fearlessly
+
+???
+
+even on a solo or small-team, I think the benefits of types are really appearant when you're doing a lot of vector and matrix math
 
 ---
 
@@ -181,6 +199,12 @@ https://github.com/NoelFB/foster
 .center[
 <img src="images/guy_walk.gif" width="50%" style="image-rendering: pixelated;">
 ]
+
+---
+
+# quickly:
+
+## some TypeScript things I built
 
 ---
 
@@ -235,7 +259,7 @@ class BusinessBusiness {
 
 --
 
-And somewhere a function with
+Your decorator would start with something like
 
 ```typescript
 public static Track(target:any, key:string):void
@@ -244,6 +268,14 @@ public static Track(target:any, key:string):void
   console.log("thing named " + key + " has type " + type);
 }
 ```
+
+--
+
+Other examples from the [docs](https://www.typescriptlang.org/docs/handbook/decorators.html):
+
+* sealing classes
+* annotating properties
+* making parameters in a function declaration @required
 
 ---
 
@@ -340,7 +372,7 @@ export class Mover extends Component
 
 .pull-right[
 
-## After @decorators
+## After 🎄@decorators
 
 ```typescript
 @Component.register
@@ -363,6 +395,12 @@ export class Mover
   }
 }
 ```
+]
+
+--
+
+.pull-right[
+# 🔥🔥🔥🔥🔥
 ]
 
 ---
@@ -448,7 +486,8 @@ const layer = layerJSONData as TiledLayer;
             (0,
             o.default)(this, g);
             var t = (0,
-            l.default)(this, (g.__proto__ || Object.getPrototypeOf(g)).apply(this, arguments));
+            l.default)(this, (g.__proto__ ||
+                Object.getPrototypeOf(g)).apply(this, arguments));
             return t.startPos = new _.Vector,
             t.intensity = 3,
 ```
@@ -475,12 +514,13 @@ Burst:
       , g = n(9)
       , _ = n(7)
       , b = n(84)
-      , Wobble = function(t) {
+*     , Wobble = function(t) {
         function Wobble() {
             (0,
-            o.default)(this, Wobble);
+*           o.default)(this, Wobble);
             var t = (0,
-            l.default)(this, (Wobble.__proto__ || Object.getPrototypeOf(Wobble)).apply(this, arguments));
+*           l.default)(this, (Wobble.__proto__ ||
+                Object.getPrototypeOf(Wobble)).apply(this, arguments));
             return t.startPos = new _.Vector,
             t.intensity = 3,
 ```
@@ -606,7 +646,15 @@ module.exports.plugins.push(
 
 --
 
-### the compiler knows all the Components!
+### Hmm...the compiler knows all the Components
+
+--
+
+### many modern languages give you (some of) the compiler as a library
+
+--
+
+### are we lucky here?
 
 --
 
@@ -615,6 +663,10 @@ import * as ts from "typescript";
 
 ts.createProgram(["foo.ts"], options);
 ```
+
+--
+
+# yes!
 
 ---
 
@@ -639,13 +691,56 @@ preprocess.ts
 }
 ```
 
+```typescript
+// Compiled with --strictNullChecks
+let x: number;
+x = 1;  // Ok
+x = undefined;  // Error
+```
 --
 
-## are there good typed serialization frameworks?
+# ^^^^ AMAZING 😵
+
+--
+
+### when I discovered this, it was too late, and enabling it caused 500+ errors in the project
+
+---
+
+# things I want to learn about
+
+--
+
+## are there good (typed, ergonomic, sane) serialization frameworks?
+
+* validation
+* arbitrary nested serialization
+
+--
+
+## learn how class type definitions actually work
+
+"When creating factories in TypeScript using generics, it is necessary to refer to class types by their constructor functions. For example:"
+
+--
+
+```typescript
+function create<T>(c: {new(): T; }): T {
+    return new c();
+}
+```
+
+--
+
+# ☠️☠️☠️☠️
 
 ---
 
 # future plans
+
+--
+
+* find ways to improve compilation speed?
 
 --
 
@@ -662,14 +757,21 @@ preprocess.ts
 --
 
 * find a way to ship a lightweight iOS version?
+  * DOM-less GL rendering
+
+--
+
+* make the ultimate game programming language
 
 ---
+
+class: middle, center
 
 # thanks!
 
 ### @kevinwatters
 
-<img src="images/guy_die.gif" width="30%" style="image-rendering: pixelated;">
+<img src="images/guy_die.gif" width="27%" style="image-rendering: pixelated;">
 
 --
 
